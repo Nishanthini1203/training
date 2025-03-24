@@ -1,0 +1,78 @@
+Step-by-Step Guide to Successfully Executing the TechShop Project
+This guide will help you set up, connect, and run the TechShop project step by step.
+________________________________________
+Step 1: Ensure MSSQL Database is Active
+1.	Open SQL Server Management Studio (SSMS).
+2.	Run the following command in the Query Editor to activate the TechShop database: USE TechShop;
+3.	Ensure the database exists by running: SELECT name FROM sys.databases;
+________________________________________
+Step 2: Install Required Python Libraries
+1.	Open Command Prompt (cmd).
+2.	Run the following command to install dependencies: pip install pyodbc tabulate
+•	pyodbc allows Python to connect to MSSQL.
+•	tabulate formats table data for better readability.
+________________________________________
+Step 3: Verify Project Structure
+Ensure your project files are correctly placed at:
+C:\Users\nisha\OneDrive\Documents\TechShop
+TechShop/
+│── database_connector.py  # Handles database operations
+│── main.py               # Entry point for testing the application
+│── models/
+│   │── customer.py       # Customer class
+│   │── product.py        # Product class
+│   │── order.py          # Order class
+│   │── order_details.py  # OrderDetails class
+│   │── inventory.py      # Inventory class
+________________________________________
+Step 4: Navigate to the Project Folder
+1.	Open Command Prompt (cmd).
+2.	Navigate to the project directory using: 
+3.	cd C:\Users\nisha\OneDrive\Documents\TechShop
+4.	Now, you are inside the TechShop project folder.
+________________________________________
+Step 5: Run the Database Connection File
+Before running any models, test the database connection to ensure connectivity.
+1.	Run the following command: python database_connector.py
+2.	If successful, it should print: Connected to TechShop database successfully!
+3.	If an error occurs, check that: 
+o	MSSQL server is running.
+o	The database name is correctly set (TechShop).
+o	The connection string in database_connector.py is correct.
+________________________________________
+Step 6: Run Each Model File to Check for Errors
+Run each model individually to check for errors.
+1.	Run the customer model:python models/customer.py
+Expected Output:
+o	Customer registered successfully.
+o	Customer details displayed.
+2.	Run the product model: python models/product.py
+Expected Output:
+o	Product added successfully.
+o	Product details displayed.
+3.	Run the order model:python models/order.py
+Expected Output:
+o	Order placed successfully.
+o	Order details displayed.
+4.	Run the order details model:python models/order_details.py
+Expected Output:
+o	Order details added successfully.
+o	Order details displayed.
+5.	Run the inventory model:python models/inventory.py
+Expected Output:
+o	Inventory updated successfully.
+o	List of available products displayed.
+________________________________________
+Step 7: Run main.py to Start CLI Application
+Once all models work correctly, run the main CLI application to manage everything from a single interface.
+1.	Run the following command: python main.py
+Expected Output: 
+🛒 Welcome to TechShop CLI 🛒
+Manage Customers
+Manage Products
+Manage Orders
+Manage Inventory
+Exit
+Enter your choice: 
+Now, you can register customers, add products, place orders, update inventory, and manage TechShop.
+
