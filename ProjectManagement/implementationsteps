@@ -1,0 +1,127 @@
+Step-by-Step Guide to Successfully Executing the Project Management System
+This guide will help you set up, connect, and run the Project Management System step by step.
+________________________________________
+Step 1: Ensure MSSQL Database is Active
+1.	Open SQL Server Management Studio (SSMS).
+2.	Run the following command in the Query Editor to activate the ProjectManagement database:
+3.	USE ProjectManagement;
+4.	Ensure the database exists by running:
+5.	SELECT name FROM sys.databases;
+✔ If ProjectManagement appears in the result, the database is active.
+________________________________________
+Step 2: Install Required Python Libraries
+1.	Open Command Prompt (cmd).
+2.	Run the following command to install dependencies:
+3.	pip install pyodbc tabulate unittest
+o	pyodbc → Allows Python to connect to MSSQL.
+o	tabulate → Formats table data for better readability.
+o	unittest → Ensures system functionality through test cases.
+________________________________________
+Step 3: Verify Project Structure
+Ensure your project files are correctly placed at:
+📂 C:\Users\nisha\OneDrive\Documents\ProjectManagement
+ProjectManagement/
+│── util/
+│   │── dbconnector.py  # Handles database connection
+│── dao/
+│   │── IProjectRepository.py  # Interface for project functions
+│   │── ProjectRepositoryImpl.py  # Implementation of project functions
+│── model/
+│   │── employee.py  # Employee class
+│   │── project.py   # Project class
+│   │── task.py      # Task class
+│── myexceptions/
+│   │── EmployeeNotFoundException.py  # Exception for missing employees
+│   │── ProjectNotFoundException.py   # Exception for missing projects
+│── tests/
+│   │── test_employee.py  # Unit test for employee operations
+│   │── test_project.py   # Unit test for project operations
+│   │── test_task.py      # Unit test for task operations
+│   │── test_exceptions.py # Unit test for exception handling
+│── main.py  # Entry point for testing the application
+✔ Ensure that all files are present before proceeding.
+________________________________________
+Step 4: Navigate to the Project Folder
+1.	Open Command Prompt (cmd).
+2.	Navigate to the project directory using:
+3.	cd C:\Users\nisha\OneDrive\Documents\ProjectManagement
+✔ Now, you are inside the Project Management System folder.
+________________________________________
+Step 5: Run the Database Connection File
+Before running any models, test the database connection to ensure connectivity.
+1.	Run the following command:
+2.	python util/dbconnector.py
+3.	If successful, it should print:
+4.	✅ Connected to ProjectManagement database successfully!
+5.	If an error occurs, check that:
+o	MSSQL server is running.
+o	The database name is correctly set (ProjectManagement).
+o	The connection string in dbconnector.py is correct.
+________________________________________
+Step 6: Run Each Model File to Check for Errors
+Run each model individually to verify functionality.
+1️⃣ Run the employee model:
+python model/employee.py
+✔ Expected Output:
+✅ Employee added successfully.
+✅ Employee details displayed.
+2️⃣ Run the project model:
+python model/project.py
+✔ Expected Output:
+✅ Project added successfully.
+✅ Project details displayed.
+3️⃣ Run the task model:
+python model/task.py
+✔ Expected Output:
+✅ Task assigned successfully.
+✅ Task details displayed.
+________________________________________
+Step 7: Run Individual Functionalities in CLI
+Test all functionalities one by one before running the full application.
+Add an Employee
+python dao/ProjectRepositoryImpl.py
+✔ Expected Output:
+✅ Employee added successfully!
+Add a Project
+python dao/ProjectRepositoryImpl.py
+✔ Expected Output:
+✅ Project added successfully!
+Assign Employee to a Project
+python dao/ProjectRepositoryImpl.py
+✔ Expected Output:
+✅ Employee assigned to Project successfully!
+Generate Expense Report
+python dao/ProjectRepositoryImpl.py
+✔ Expected Output:
+📊 Salary Expense Report:
+Project: AI Development | Total Expense: 80,000.00
+________________________________________
+Step 8: Run main.py to Start CLI Application
+Once all models work correctly, run the full CLI application:
+python main.py
+✔ Expected Output:
+📂 Welcome to the Project Management System 📂
+1. Add Employee
+2. Add Project
+3. Add Task
+4. View Employees
+5. View Projects
+6. View Tasks
+7. Update Employee Salary
+8. Update Project Status
+9. Update Task
+10. Delete Employee
+11. Delete Project
+12. Delete Task
+13. Expense Report
+14. Exit
+Enter your choice:
+________________________________________
+Step 9: Run Unit Tests
+To validate functionality, run all unit tests:
+python -m unittest discover tests/
+✔ Expected Output:
+✅ Ran 8 tests in 0.154s
+✅ OK
+This confirms that all functionalities are working correctly. 🎯
+
