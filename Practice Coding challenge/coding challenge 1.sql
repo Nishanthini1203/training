@@ -86,8 +86,8 @@ VALUES
 ('ITC Grand Chola', 'Chennai', 4.9),
 ('Radisson Blu', 'Coimbatore', 4.6),
 ('The Gateway Hotel', 'Madurai', 4.3),
-('Le Méridien', 'Kochi', 4.4),
-('Taj Fisherman’s Cove', 'Chennai', 4.8),
+('Le MÃ©ridien', 'Kochi', 4.4),
+('Taj Fishermanâ€™s Cove', 'Chennai', 4.8),
 ('Sterling Ooty Elk Hill', 'Tamil Nadu', 4.2);
 
 -- Insert data into Rooms table
